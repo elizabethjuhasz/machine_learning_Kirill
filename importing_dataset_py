@@ -7,3 +7,10 @@ Y = dataset.iloc[:, 3].values
 # include last column
 # remember indices start at 0
 # remember to always set wd
+
+# override restrction for printing too many lines run the following
+# Run 
+np.set_printoptions(threshold = np.nan) 
+# or 
+np.set_printoptions(threshold=np.inf) 
+
