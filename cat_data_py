@@ -19,9 +19,23 @@ X[:, 1:3] = imputer.transform(X[:, 1:3])
 
 np.set_printoptions(threshold=500) 
  
-# Ecoding Categorical Data
+# Encoding Categorical Data
 from sklearn.preprocessing import LabelEncoder
 labelencoder_X = LabelEncoder()
 labelencoder_X.fit_transform(X [:,0])
 
-*** note the above code only gives numerical categories to the country names ***
+# with this code below X[:, 0] , the country names are given numerical codes 
+
+from sklearn.preprocessing import LabelEncoder
+labelencoder_X = LabelEncoder()
+X[:, 0] = labelencoder_X.fit_transform(X [:,0])
+
+# going to turn country names into binary variables using class 'OneHotEncoder'
+
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder 
+labelencoder_X = LabelEncoder()
+X[:, 0] = labelencoder_X.fit_transform(X [:,0])
+onehotencoder = OneHotEncoder(categorical_features=[0])
+X = onehotencoder.fit_transform(X).toarray()
+
+
