@@ -1,0 +1,11 @@
+# Feature scaling
+# need to scale properly to ensure accuracy 
+# in R, variable (X) must be numeric
+# country and purchased are not numeric, because categories were put as factors
+# factors in R not numeric 
+
+# Feature Scaling
+# columns that you are interested in 
+
+training_set[, 2:3] = scale(training_set[,2:3])
+test_set[,2:3] = scale(test_set[, 2:3])
