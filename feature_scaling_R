@@ -5,7 +5,7 @@
 # factors in R not numeric 
 
 # Feature Scaling
-# columns that you are interested in 
+# columns that you are interested in (that you want to scale--age and salary) 
 
 training_set[, 2:3] = scale(training_set[,2:3])
 test_set[,2:3] = scale(test_set[, 2:3])
